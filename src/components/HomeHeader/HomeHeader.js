@@ -1,6 +1,6 @@
-/* eslint-disable array-callback-return */
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Swiper from "swiper/dist/js/swiper.js";
 
 import "./HomeHeader.scss";
 
@@ -28,6 +28,25 @@ class HomeHeader extends Component {
       if (!sliderEl) {
         return;
       }
+      const slider = new Swiper(sliderEl, {
+        slidesPerView: 1,
+        loop: true,
+        spaceBetween: 0,
+        observer: true,
+
+        autoplay: {
+          delay: 10000
+        },
+
+        pagination: {
+          el: ".home-swiper-pagination",
+          type: "progressbar"
+        },
+        navigation: {
+          nextEl: ".home-swiper-button-next",
+          prevEl: ".home-swiper-button-prev"
+        }
+      });
     })();
 
     return (

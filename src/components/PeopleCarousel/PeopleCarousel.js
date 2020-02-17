@@ -1,7 +1,7 @@
-/* eslint-disable array-callback-return */
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 
+import Swiper from "swiper/dist/js/swiper.js";
 import backup from "./images/backup.jpg";
 import "./PeopleCarousel.scss";
 
@@ -13,6 +13,30 @@ class PeopleCarousel extends Component {
       if (!sliderEl) {
         return;
       }
+      const slider = new Swiper(sliderEl, {
+        init: true,
+        slidesPerView: 5,
+        loop: true,
+        spaceBetween: 30,
+        observer: true,
+
+        breakpoints: {
+          768: {
+            slidesPerView: 5
+          },
+          640: {
+            slidesPerView: 3
+          }
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }
+      });
     })();
 
     const config = this.props.MDBConfig;
