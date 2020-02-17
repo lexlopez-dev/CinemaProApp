@@ -1,7 +1,7 @@
+/* eslint-disable array-callback-return */
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 
-import Swiper from "swiper/dist/js/swiper.js";
 import backup from "./images/backup.jpg";
 import "./PeopleCarousel.scss";
 

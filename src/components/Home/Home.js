@@ -13,7 +13,6 @@ import postTVPopular from "../../actions/TVActions/postTVPopular";
 import postTVOnTheAir from "../../actions/TVActions/postTVOnTheAir";
 import postTVTopRated from "../../actions/TVActions/postTVTopRated";
 
-import Swiper from "swiper/dist/js/swiper.js";
 import MainNav from "../MainNav/MainNav";
 import HomeHeader from "../HomeHeader/HomeHeader";
 import ItemCarousel from "../ItemCarousel/ItemCarousel";

@@ -1,6 +1,6 @@
+/* eslint-disable array-callback-return */
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Swiper from "swiper/dist/js/swiper.js";
 
 import "./HomeHeader.scss";
 
