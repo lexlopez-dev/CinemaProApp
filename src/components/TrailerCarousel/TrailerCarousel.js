@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { Component } from "react";
 import Swiper from "swiper/dist/js/swiper.js";
 import "./TrailerCarousel.scss";
@@ -10,31 +11,6 @@ class TrailerCarousel extends Component {
       if (!sliderEl) {
         return;
       }
-      const slider = new Swiper(sliderEl, {
-        init: true,
-        slidesPerView: 3,
-        loop: true,
-        spaceBetween: 0,
-        observer: true,
-        centeredSlides: true,
-
-        breakpoints: {
-          1500: {
-            slidesPerView: 2
-          },
-          800: {
-            slidesPerView: 1
-          }
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
-      });
     })();
 
     return (

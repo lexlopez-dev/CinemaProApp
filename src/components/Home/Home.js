@@ -71,30 +71,6 @@ class Home extends Component {
       if (!sliderEl) {
         return;
       }
-      const slider = new Swiper(sliderEl, {
-        init: true,
-        slidesPerView: 7,
-        loop: true,
-        spaceBetween: 14,
-        observer: true,
-
-        breakpoints: {
-          1145: {
-            slidesPerView: 5
-          },
-          699: {
-            slidesPerView: 3
-          }
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
-      });
     })();
 
     // Displays correct carousels
