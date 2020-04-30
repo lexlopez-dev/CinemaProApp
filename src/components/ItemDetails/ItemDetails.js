@@ -18,7 +18,6 @@ import getPeopleCombinedCredits from "../../actions/peopleActions/getPeopleCombi
 import StarRating from "../StarRating/StarRating";
 import PeopleCarousel from "../PeopleCarousel/PeopleCarousel";
 import TrailerCarousel from "../TrailerCarousel/TrailerCarousel";
-import Loader from "../Loader/Loader";
 
 import "./ItemDetails.scss";
 

@@ -18,7 +18,6 @@ import MainNav from "../MainNav/MainNav";
 import HomeHeader from "../HomeHeader/HomeHeader";
 import ItemCarousel from "../ItemCarousel/ItemCarousel";
 import MainFooter from "../MainFooter/MainFooter";
-import Loader from "../Loader/Loader";
 
 import "./Home.scss";
 
@@ -80,20 +79,20 @@ class Home extends Component {
 
         breakpoints: {
           1145: {
-            slidesPerView: 5
+            slidesPerView: 5,
           },
           699: {
-            slidesPerView: 3
-          }
+            slidesPerView: 3,
+          },
         },
         pagination: {
           el: ".swiper-pagination",
-          clickable: true
+          clickable: true,
         },
         navigation: {
           nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
+          prevEl: ".swiper-button-prev",
+        },
       });
     })();
 
@@ -219,7 +218,7 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   apiKey: state.PostMDBConfig.apiKey,
   MDBConfig: state.PostMDBConfig,
 
@@ -236,21 +235,21 @@ const mapStateToProps = state => ({
   TVAiringToday: state.postTVAiringToday,
   TVPopular: state.postTVPopular,
   TVOnTheAir: state.postTVOnTheAir,
-  TVTopRated: state.postTVTopRated
+  TVTopRated: state.postTVTopRated,
 });
 
-const mapDispatchToProps = dispatch => ({
-  setItemType: type => dispatch(setItemType(type)),
+const mapDispatchToProps = (dispatch) => ({
+  setItemType: (type) => dispatch(setItemType(type)),
 
-  postMoviesUpcoming: url => dispatch(postMoviesUpcoming(url)),
-  postMoviesPopular: url => dispatch(postMoviesPopular(url)),
-  postMoviesNowPlaying: url => dispatch(postMoviesNowPlaying(url)),
-  postMoviesTopRated: url => dispatch(postMoviesTopRated(url)),
+  postMoviesUpcoming: (url) => dispatch(postMoviesUpcoming(url)),
+  postMoviesPopular: (url) => dispatch(postMoviesPopular(url)),
+  postMoviesNowPlaying: (url) => dispatch(postMoviesNowPlaying(url)),
+  postMoviesTopRated: (url) => dispatch(postMoviesTopRated(url)),
 
-  postTVAiringToday: url => dispatch(postTVAiringToday(url)),
-  postTVPopular: url => dispatch(postTVPopular(url)),
-  postTVOnTheAir: url => dispatch(postTVOnTheAir(url)),
-  postTVTopRated: url => dispatch(postTVTopRated(url))
+  postTVAiringToday: (url) => dispatch(postTVAiringToday(url)),
+  postTVPopular: (url) => dispatch(postTVPopular(url)),
+  postTVOnTheAir: (url) => dispatch(postTVOnTheAir(url)),
+  postTVTopRated: (url) => dispatch(postTVTopRated(url)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
