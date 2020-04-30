@@ -212,7 +212,6 @@ class Home extends Component {
         <div className="home-container-main">{movie}</div>
 
         <MainFooter />
-        <Loader />
       </div>
     );
   }

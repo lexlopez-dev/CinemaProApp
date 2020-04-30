@@ -938,8 +938,6 @@ class ItemDetails extends Component {
           {this.ItemDetailsMainTrailers(this.props.match.params.type)}
           {this.ItemDetailsMainReviews(this.props.match.params.type)}
         </main>
-
-        <Loader />
       </div>
     );
   }

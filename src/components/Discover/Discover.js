@@ -252,8 +252,6 @@ class Discover extends Component {
             </svg>
           </button>
         </div>
-
-        <Loader />
       </div>
     );
   }

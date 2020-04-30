@@ -436,8 +436,6 @@ class UserProfile extends Component {
             </div>
           </main>
         </div>
-
-        <Loader />
       </div>
     );
   }
