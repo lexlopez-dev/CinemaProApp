@@ -1,7 +1,7 @@
-import { POST_MDB_CONFIG } from '../actions/types';
+import { POST_MDB_CONFIG } from "../actions/types";
 
 const initialState = {
-  apiKey: '12a5356516535d4d67654a936a088c1b'
+  apiKey: "13403154d9f3f6fc07972f58977a650b",
 };
 
 const PostMDBConfig = (state = initialState, action) => {
@@ -9,11 +9,11 @@ const PostMDBConfig = (state = initialState, action) => {
     case POST_MDB_CONFIG:
       return {
         ...state,
-        ...action.payload
+        ...action.payload,
       };
     default:
       return state;
   }
-}
+};
 
 export default PostMDBConfig;
