@@ -63,10 +63,10 @@ const MainFooter = () => {
         </div>
 
         <p className="main-footer-top-copyright">
-          Copyright &copy;2020
+          Copyright &copy;2019-2020
           <br /> Code and design by{" "}
           <a href="www.lopezalex.com" target="_blank" rel="noopener noreferrer">
-            Alejandro Lopez
+            Alejandro Lopez & Hector Vasquez
           </a>
         </p>
       </section>
