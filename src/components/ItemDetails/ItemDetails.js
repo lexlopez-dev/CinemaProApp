@@ -18,7 +18,6 @@ import getPeopleCombinedCredits from "../../actions/peopleActions/getPeopleCombi
 import StarRating from "../StarRating/StarRating";
 import PeopleCarousel from "../PeopleCarousel/PeopleCarousel";
 import TrailerCarousel from "../TrailerCarousel/TrailerCarousel";
-import Loader from "../Loader/Loader";
 
 import "./ItemDetails.scss";
 
@@ -74,14 +73,11 @@ class ItemDetails extends Component {
   }
 
   // Takes a date of birth and reformats it to DAY / MONTH / YEAR
-  formatYearOfBirth = date =>
-    date
-      .split("-")
-      .reverse()
-      .join(" / ");
+  formatYearOfBirth = (date) => date.split("-").reverse().join(" / ");
 
   // Takes a date of birth and returns age
-  findAge = date => new Date().getFullYear() - parseInt(date.split("-")[0], 10);
+  findAge = (date) =>
+    new Date().getFullYear() - parseInt(date.split("-")[0], 10);
 
   // Takes string and shortens it to 50 words
   shortText = (str, length = 50) => {
@@ -118,15 +114,15 @@ class ItemDetails extends Component {
             media_id: itemId,
             favorite: !event.target
               .closest(".item-details-header-info-container-content__favorite")
-              .classList.value.includes("--active")
+              .classList.value.includes("--active"),
           }),
           headers: {
-            "Content-Type": "application/json"
-          }
+            "Content-Type": "application/json",
+          },
         }
       )
-        .then(res => res.json())
-        .catch(error => console.log(error));
+        .then((res) => res.json())
+        .catch((error) => console.log(error));
 
       event.target
         .closest(".item-details-header-info-container-content__favorite")
@@ -165,7 +161,7 @@ class ItemDetails extends Component {
   };
 
   // Returns header based on media type details
-  ItemDetailsHeaderImage = type => {
+  ItemDetailsHeaderImage = (type) => {
     switch (type) {
       case "movie":
         return (
@@ -232,7 +228,7 @@ class ItemDetails extends Component {
               </p>
 
               <svg
-                onClick={e => {
+                onClick={(e) => {
                   this.handleFavoriteItem(
                     e,
                     this.props.userDetails.id,
@@ -322,7 +318,7 @@ class ItemDetails extends Component {
               </p>
 
               <svg
-                onClick={e => {
+                onClick={(e) => {
                   this.handleFavoriteItem(
                     e,
                     this.props.userDetails.id,
@@ -418,7 +414,7 @@ class ItemDetails extends Component {
   };
 
   // Returns summary based on media type details
-  ItemDetailsMainSummary = type => {
+  ItemDetailsMainSummary = (type) => {
     switch (type) {
       case "movie":
         return (
@@ -488,7 +484,7 @@ class ItemDetails extends Component {
   };
 
   // Returns cast based on media type details
-  ItemDetailsMainCast = type => {
+  ItemDetailsMainCast = (type) => {
     switch (type) {
       case "movie":
         return (
@@ -543,7 +539,7 @@ class ItemDetails extends Component {
   };
 
   // Returns trailers based on media type details
-  ItemDetailsMainTrailers = type => {
+  ItemDetailsMainTrailers = (type) => {
     switch (type) {
       case "movie":
         return (
@@ -594,7 +590,7 @@ class ItemDetails extends Component {
   };
 
   // Returns reviews based on media type details
-  ItemDetailsMainReviews = type => {
+  ItemDetailsMainReviews = (type) => {
     switch (type) {
       case "movie":
         return (
@@ -608,7 +604,7 @@ class ItemDetails extends Component {
             </h2>
 
             {this.props.movieReviews.results.length > 0 ? (
-              this.props.movieReviews.results.map(review => (
+              this.props.movieReviews.results.map((review) => (
                 <div
                   key={review.url}
                   className="item-details-main-reviews-container"
@@ -656,7 +652,7 @@ class ItemDetails extends Component {
             </h2>
 
             {this.props.TVReviews.results.length > 0 ? (
-              this.props.TVReviews.results.map(review => (
+              this.props.TVReviews.results.map((review) => (
                 <div
                   key={review.url}
                   className="item-details-main-reviews-container"
@@ -785,7 +781,7 @@ class ItemDetails extends Component {
                 }`
               : ""
           })
-          center top no-repeat`
+          center top no-repeat`,
           }}
         >
           <div className="item-details-header-info-nav">
@@ -815,14 +811,16 @@ class ItemDetails extends Component {
           <div className="item-details-header-info-share-buttons item-details-header-info-share-buttons__hide">
             <a
               onClick={this.handleShareButton}
-              href={`mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 ${"www.filmcloud.xyz/" +
+              href={`mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 ${
+                "https://master.d1g88fn1bviuyd.amplifyapp.com/" +
                 this.props.match.params.type +
                 "/" +
                 `${
                   this.props.match.params.type === "movie"
                     ? this.props.movieDetails.id
                     : this.props.TVDetails.id
-                }`}`}
+                }`
+              }`}
             >
               <img
                 src="https://simplesharebuttons.com/images/somacro/email.png"
@@ -831,14 +829,16 @@ class ItemDetails extends Component {
             </a>
             <a
               onClick={this.handleShareButton}
-              href={`http://www.facebook.com/sharer.php?u=${"www.filmcloud.xyz/" +
+              href={`http://www.facebook.com/sharer.php?u=${
+                "https://master.d1g88fn1bviuyd.amplifyapp.com/" +
                 this.props.match.params.type +
                 "/" +
                 `${
                   this.props.match.params.type === "movie"
                     ? this.props.movieDetails.id
                     : this.props.TVDetails.id
-                }`}`}
+                }`
+              }`}
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -849,14 +849,16 @@ class ItemDetails extends Component {
             </a>
             <a
               onClick={this.handleShareButton}
-              href={`https://plus.google.com/share?url=${"www.filmcloud.xyz/" +
+              href={`https://plus.google.com/share?url=${
+                "https://master.d1g88fn1bviuyd.amplifyapp.com/" +
                 this.props.match.params.type +
                 "/" +
                 `${
                   this.props.match.params.type === "movie"
                     ? this.props.movieDetails.id
                     : this.props.TVDetails.id
-                }`}`}
+                }`
+              }`}
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -867,14 +869,16 @@ class ItemDetails extends Component {
             </a>
             <a
               onClick={this.handleShareButton}
-              href={`http://reddit.com/submit?url=${"www.filmcloud.xyz/" +
+              href={`http://reddit.com/submit?url=${
+                "www.filmcloud.xyz/" +
                 this.props.match.params.type +
                 "/" +
                 `${
                   this.props.match.params.type === "movie"
                     ? this.props.movieDetails.id
                     : this.props.TVDetails.id
-                }`}&amp;title=Film Cloud`}
+                }`
+              }&amp;title=Film Cloud`}
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -885,14 +889,16 @@ class ItemDetails extends Component {
             </a>
             <a
               onClick={this.handleShareButton}
-              href={`http://www.tumblr.com/share/link?url=${"www.filmcloud.xyz/" +
+              href={`http://www.tumblr.com/share/link?url=${
+                "www.filmcloud.xyz/" +
                 this.props.match.params.type +
                 "/" +
                 `${
                   this.props.match.params.type === "movie"
                     ? this.props.movieDetails.id
                     : this.props.TVDetails.id
-                }`}&amp;title=Film Cloud`}
+                }`
+              }&amp;title=Film Cloud`}
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -903,14 +909,16 @@ class ItemDetails extends Component {
             </a>
             <a
               onClick={this.handleShareButton}
-              href={`https://twitter.com/share?url=${"www.filmcloud.xyz/" +
+              href={`https://twitter.com/share?url=${
+                "https://master.d1g88fn1bviuyd.amplifyapp.com/" +
                 this.props.match.params.type +
                 "/" +
                 `${
                   this.props.match.params.type === "movie"
                     ? this.props.movieDetails.id
                     : this.props.TVDetails.id
-                }`}&amp;text=Film%20Cloud%20&amp;hashtags=filmcloud`}
+                }`
+              }&amp;text=Film%20Cloud%20&amp;hashtags=filmcloud`}
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -930,14 +938,12 @@ class ItemDetails extends Component {
           {this.ItemDetailsMainTrailers(this.props.match.params.type)}
           {this.ItemDetailsMainReviews(this.props.match.params.type)}
         </main>
-
-        <Loader />
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   apiKey: state.PostMDBConfig.apiKey,
   MDBConfig: state.PostMDBConfig,
 
@@ -958,22 +964,22 @@ const mapStateToProps = state => ({
   TVReviews: state.getTVReviews,
 
   peopleDetails: state.getPeopleDetails,
-  peopleCombinedCredits: state.getPeopleCombinedCredits
+  peopleCombinedCredits: state.getPeopleCombinedCredits,
 });
 
-const mapDispatchToProps = dispatch => ({
-  getMovieDetails: url => dispatch(getMovieDetails(url)),
-  getMovieCredits: url => dispatch(getMovieCredits(url)),
-  getMovieTrailers: url => dispatch(getMovieTrailers(url)),
-  getMovieReviews: url => dispatch(getMovieReviews(url)),
+const mapDispatchToProps = (dispatch) => ({
+  getMovieDetails: (url) => dispatch(getMovieDetails(url)),
+  getMovieCredits: (url) => dispatch(getMovieCredits(url)),
+  getMovieTrailers: (url) => dispatch(getMovieTrailers(url)),
+  getMovieReviews: (url) => dispatch(getMovieReviews(url)),
 
-  getTVDetails: url => dispatch(getTVDetails(url)),
-  getTVCredits: url => dispatch(getTVCredits(url)),
-  getTVTrailers: url => dispatch(getTVTrailers(url)),
-  getTVReviews: url => dispatch(getTVReviews(url)),
+  getTVDetails: (url) => dispatch(getTVDetails(url)),
+  getTVCredits: (url) => dispatch(getTVCredits(url)),
+  getTVTrailers: (url) => dispatch(getTVTrailers(url)),
+  getTVReviews: (url) => dispatch(getTVReviews(url)),
 
-  getPeopleDetails: url => dispatch(getPeopleDetails(url)),
-  getPeopleCombinedCredits: url => dispatch(getPeopleCombinedCredits(url))
+  getPeopleDetails: (url) => dispatch(getPeopleDetails(url)),
+  getPeopleCombinedCredits: (url) => dispatch(getPeopleCombinedCredits(url)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemDetails);

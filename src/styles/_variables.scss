@@ -1,13 +1,13 @@
 $primary-color: linear-gradient(
   165deg,
-  rgb(52, 167, 48) 0%,
-  rgb(11, 6, 63) 22%
+  rgb(48, 119, 167) 0%,
+  rgb(36, 40, 53) 22%
 );
 $secondary-color: rgb(0, 145, 182);
 $tertiary-color: #141b1f;
 
-$primary-font-color: #fff;
-$secondary-font-color: rgba(255, 255, 255, 0.9);
+$primary-font-color: rgb(255, 255, 255);
+$secondary-font-color: rgb(255, 255, 255);
 
 $primary-font: "Roboto", sans-serif;
 $secondary-font: "Lato", sans-serif;
